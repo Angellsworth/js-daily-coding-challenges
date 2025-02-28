@@ -160,7 +160,17 @@ computeRemainder(4,0) //=> Infinity
 computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------------------*/
 // Your solution for 05-computeRemainder here:
-
+function computeRemainder(num1, num2) {
+  if (num2 === 0) {
+    //if divisor is 0, return infinity
+    return Infinity;
+  } else {
+    let q = Math.floor(num1 / num2); //get how many full time num2 fits into num1
+    let remainder = num1 - q * num2;
+    return remainder; //return the remainer
+  }
+}
+console.log("Challenge #5 solution is:", computeRemainder(10, 0));
 /*-----------------------------------------------------------------------------
 Challenge: 06-range
 
@@ -183,7 +193,15 @@ range(1,1) //=> []
 range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------------------*/
 // Your solution for 06-range here:
-
+function range(start, end) {
+  if (start > end) return "First argument must be less than second";
+  let result = [];
+  for (let i = start; i < end; i++) {
+    result.push(i);
+  }
+  return result;
+}
+console.log("Challenge #6:", range(-5, 2));
 /*-----------------------------------------------------------------------------
 Challenge: 07-reverseUpcaseString
 
