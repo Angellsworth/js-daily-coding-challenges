@@ -219,6 +219,10 @@ Examples:
 reverseUpcaseString("SEI Rocks!") //=> "!SKCOR IES" 
 -----------------------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
+function reverseUpcaseString(string) {
+  return string.split("").reverse().join("").toUpperCase()
+}
+console.log("Challenge #7:", reverseUpcaseString("sei rocks!"));
 
 /*-----------------------------------------------------------------------------
 Challenge: 08-removeEnds
@@ -237,7 +241,13 @@ removeEnds('SEB Rocks!') //=> "EB Rocks"
 removeEnds('a') //=> "" (empty string)
 -----------------------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
+function removeEnds(string) {
+  if (string.length < 3){
+    return ""
+  } return string.slice(1, string.length -1)
+}
 
+console.log("Challenge #8", removeEnds("SEB Rocks!"))
 /*-----------------------------------------------------------------------------
 Challenge: 09-charCount
 
