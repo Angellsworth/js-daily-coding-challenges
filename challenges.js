@@ -286,6 +286,15 @@ charCount('Today is fantastic!')
 -----------------------------------------------------------------------------*/
 // Your solution for 09-charCount here:
 
+function charCount(string) {
+  let result = {}; // Create an empty object
+
+  for (let char of string) { // Loop through each character
+    result[char] = (result[char] || 0) + 1; // Count every character, including spaces and punctuation
+  }
+  return result; // Return the final count
+}
+console.log(charCount('Today is fantastic!'))
 /*-----------------------------------------------------------------------------
 Challenge: 10-formatWithPadding
 
@@ -311,7 +320,17 @@ formatWithPadding(42, '*', 10) //=> "********42"
 formatWithPadding(1234, '*', 3) //=> "1234"
 -----------------------------------------------------------------------------*/
 // Your solution for 10-formatWithPadding here:
+function formatWithPadding(number, padChar, length) {
+  let numStr = number.toString(); // Convert number to string
 
+  // If the current length is smaller than the required length, pad the string
+  if (numStr.length < length) {
+    return numStr.padStart(length, padChar);
+  }
+
+  // If the number is already long enough, return it as a string
+  return numStr;
+}
 /*-----------------------------------------------------------------------------
 Challenge: 11-isPalindrome
 
@@ -335,7 +354,15 @@ isPalindrome('A nut for a jar of tuna') //=> true
 isPalindrome('') //=> true
 -----------------------------------------------------------------------------*/
 // Your solution for 11-isPalindrome here:
+function isPalindrome(str) {
+  if(str.length <= 1)return true;
 
+  let cleanStr = str.toLowerCase().replace(/\s/g, '');
+  let reversed = cleanStr.split('').reverse().join('');
+
+  return cleanStr === reversed
+}
+console.log(isPalindrome('A nut for a jar of tuna'))
 /*-----------------------------------------------------------------------------
 Challenge: 12-hammingDistance
 
